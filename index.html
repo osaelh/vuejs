@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" integrity="sha512-5fsy+3xG8N/1PV5MIJz9ZsWpkltijBI48gBzQ/Z2eVATePGHOkMIn+xTDHIfTZFVb9GMpflF2wOWItqxAP2oLQ==" crossorigin="anonymous" />
+    <title>vue js</title>
+</head>
+<body>
+    <h1>vue basics</h1>
+    <div id="app">
+        <h2>{{ title }}</h2>
+        <p>{{ greet() }}</p>
+        <a v-bind:href='url'>youtube</a>
+        <br>
+        <div v-bind:class="classes">
+           classes from instance
+        </div>
+        <br>
+        <input type="text" v-bind:value="name">
+        <input type="text" v-model="name">
+        <p>I earn {{ wage }} $ per hour</p>
+        <button v-on:click='changeWage(1)'>increase wage by 1 $</button>
+        <button v-on:dblclick='changeWage(-1)'>decrease wage by 1 $</button>
+
+        <button @click.alt='logMessage()'>alt-click me</button>
+
+        <br>
+
+        <p v-if="showName">rock-lee</p>
+        <p v-else-if="showAge">25</p>
+        <button @click="toggleName()">showName: {{ showName }}</button>
+        <button @click="toggleAge()">showAge: {{ showAge }}</button>
+
+        <br>
+
+        <ul>
+            <li v-for="(ninja, index) in ninjas">ninja {{ index }} : {{ ninja }}</li>
+        </ul>
+
+        <br>
+
+        <div v-for="yonko in yonkos">
+            <p>yonko: {{yonko.name}}</p>
+            <p>pirate groupe: {{yonko.pirateGroupe}}</p>
+        </div>
+
+
+        </div>
+
+    <script src="/main.js"></script>
+</body>
+<style>
+    .one{
+        color: black;
+    }
+    .two{
+        text-decoration: underline;
+    }
+</style>
+</html>
