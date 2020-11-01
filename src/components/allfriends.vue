@@ -1,6 +1,7 @@
 <template>
     <div class="all-friens">
         <h2>all friends</h2>
+        <h3>clique me</h3>
         <div v-for='(friend, index) in friends' :key="index">
             <span @click="unfriend(friend.name)">{{ friend.name }}</span>
 
